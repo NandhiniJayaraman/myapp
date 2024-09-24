@@ -12,33 +12,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>Manager</td>
-            <td>HR</td>
-            <td>john.doe@example.com</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Jane Smith</td>
-            <td>Developer</td>
-            <td>IT</td>
-            <td>jane.smith@example.com</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Mike Johnson</td>
-            <td>Designer</td>
-            <td>Marketing</td>
-            <td>mike.johnson@example.com</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Lisa White</td>
-            <td>Analyst</td>
-            <td>Finance</td>
-            <td>lisa.white@example.com</td>
+        <tr v-for="employee in employees" :key="employee.id">
+            <td>{{ employee.name}}</td>
+            <td>{{employee.email}}</td>
         </tr>
     </tbody>
 </table>
@@ -50,7 +26,10 @@
 
 <script>
 export default {
-    name: "employee-table"
+    name: "employee-table",
+    props:{
+        employess:Array
+    }
 }
 </script>
 
