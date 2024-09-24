@@ -6,13 +6,12 @@
         <tr>
             <th>#</th>
             <th>Name</th>
-            <th>Position</th>
-            <th>Department</th>
-            <th>Contact</th>
+            <th>Email</th>
         </tr>
     </thead>
     <tbody>
         <tr v-for="employee in employees" :key="employee.id">
+            <td>{{ employee.id}}</td>
             <td>{{ employee.name}}</td>
             <td>{{employee.email}}</td>
         </tr>
@@ -28,7 +27,7 @@
 export default {
     name: "employee-table",
     props:{
-        employess:Array
+        employees:Array
     }
 }
 </script>
